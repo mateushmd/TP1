@@ -1,0 +1,57 @@
+:root {
+    --background-primary: #0D1117;
+    --main: #238636;
+    --secondary: #30363d;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    background-color: var(--background-primary);
+}
+
+h1 {
+    background-color: var(--main);
+}
+
+h2 {
+    white-space: nowrap;
+}
+
+p {
+    text-align: justify;
+}
+
+i {
+    font-size: 2em;
+}
+
+.line {
+    height: 2px;
+    background-color: var(--secondary);
+}
+
+#profile-pic {
+    padding: 0;
+    aspect-ratio: 1/1;
+    width: 300px;
+    object-fit: cover;
+    object-position: 0px -50px;
+}
+
+.repository {
+    border: 1px solid var(--secondary);
+}
+
+.carousel-item p {
+    text-align: center;
+}
+
+.carousel-item img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(13, 17, 23, 0.6);
+}
