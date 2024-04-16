@@ -1,17 +1,25 @@
 :root {
     --background-primary: #0D1117;
+    --background-secondary: #010409;
     --main: #238636;
     --secondary: #30363d;
 }
 
 body {
-    min-height: 100%;
-    margin: 0;
+    min-height: 100vh;
+    margin: 0 !important;
     background-color: var(--background-primary);
+}
+
+main {
+    margin-bottom: 60px;
+    width: 75% !important;
+    height: 100%;
 }
 
 h1 {
     background-color: var(--main);
+    width: 50%;
 }
 
 h2 {
@@ -41,6 +49,16 @@ i {
 
 .repository {
     border: 1px solid var(--secondary);
+
+    transform: scale(100%);
+
+    transition: all .2s ease;
+}
+
+.repository:hover {
+    transform: scale(107%);
+
+    transition: all .2s ease;
 }
 
 .carousel-item p {
@@ -59,4 +77,162 @@ i {
 .colega {
     border: 1px solid var(--secondary);
     width: 15%;
+}
+
+.colega-pic {
+    width: 95%;
+}
+
+.topic {
+    background-color: var(--main);
+}
+
+footer {
+    background-color: var(--background-secondary);
+}
+
+@media only screen and (max-width: 1413px) {
+    .repository p {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 1370px) {
+    #profile-pic {
+        width: 280px;
+    }
+
+    .colega-container {
+        width: 150px;
+    }
+
+    .colega-pic {
+        width: 120px;
+        margin: 5px;
+    }
+}
+
+@media only screen and (max-width: 1145px) {
+    h1 {
+        width: 75%;
+    }
+
+    #repositories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .repository {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #profile-pic {
+        width: 250px;
+    }
+
+    h1 {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    main {
+        width: 90% !important;
+    }
+
+    h1 {
+        margin-bottom: 2em;
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    footer {
+        font-size: 0.8em !important;
+    }
+
+    #repository a,
+    span {
+        font-size: 0.8em;
+    }
+
+    #repository h3,
+    h2 {
+        font-size: 1.1em;
+    }
+
+    #name-footer {
+        font-size: 1.2em;
+    }
+
+    .carousel-item .carousel-img {
+        width: 130% !important;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #title-name {
+        font-size: 1.2em !important;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    #profile-pic {
+        width: 175px;
+    }
+
+    i {
+        font-size: 1.3em;
+    }
+
+    section h2 {
+        font-size: 1.2em;
+    }
+
+    section p {
+        font-size: 0.7em;
+    }
+
+    .repository {
+        width: 100% !important;
+    }
+
+    .colega-container h5 {
+        font-size: 0.9em;
+    }
+
+    .colega-pic {
+        width: 90px;
+    }
+
+    .colega-container {
+        width: 110px;
+    }
+
+    #repository h2 {
+        text-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 341px) {
+    .colega-pic {
+        width: 60px;
+    }
+
+    .colega-container {
+        width: 80px;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(100%);
+    }
+
+    100% {
+        transform: scale(110%);
+    }
 }
