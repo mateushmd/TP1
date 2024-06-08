@@ -11,6 +11,8 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body class="pt-5 text-light">
@@ -21,14 +23,16 @@
                     <h1 class="rounded fs-4 fw-bold p-3 text-center" id="title-name">MATEUS DINIZ</h1>
                 </a>
                 <nav class="col-lg-6 col-md-8 d-flex justify-content-around text-end">
-                    <a href="" class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
-                        <p class="mb-0">Seção 1</p>
+                    <a href="#repos" class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
+                        <p class="mb-0">Repositórios</p>
                     </a>
-                    <a href="" class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
-                        <p class="mb-0">Seção 2</p>
+                    <a href="#content"
+                        class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
+                        <p class="mb-0">Conteúdo sugerido</p>
                     </a>
-                    <a href="" class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
-                        <p class="mb-0">Seção 3</p>
+                    <a href="#coworkers"
+                        class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
+                        <p class="mb-0">Colegas</p>
                     </a>
                 </nav>
             </div>
@@ -53,18 +57,18 @@
                     <div class="d-flex gap-5">
                         <a href="https://www.linkedin.com/in/mateus-diniz-b724882a4/"
                             class="text-light text-decoration-none" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/mateushmd" class="text-light text-decoration-none"><i
-                                class="fab fa-github" target="_blank"></i></a>
-                        <a href="https://instagram.com/mateehmd" class="text-light text-decoration-none"><i
-                                class="fab fa-instagram" target="_blank"></i></a>
-                        <a href="https://x.com/mateushmd" class="text-light text-decoration-none"><i
-                                class="fab fa-twitter" target="_blank"></i></a>
+                        <a href="https://github.com/mateushmd" class="text-light text-decoration-none"
+                            target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/mateehmd" class="text-light text-decoration-none"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/mateushmd" class="text-light text-decoration-none" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="d-flex flex-column gap-5">
+        <section class="d-flex flex-column gap-5" id="repos">
             <div class="d-flex align-items-center">
                 <h2>Repositórios (3)</h2>
                 <div class="line w-100 ms-4"></div>
@@ -116,7 +120,7 @@
             </div>
         </section>
 
-        <section class="d-flex flex-column gap-5">
+        <section class="d-flex flex-column gap-5" id="content">
             <div class="d-flex align-items-center">
                 <h2>Conteúdo sugerido</h2>
                 <div class="line w-100 ms-4"></div>
@@ -131,42 +135,6 @@
                         aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="https://youtube.com/@freecodecamp" class="d-flex justify-content-center"
-                            target="_blank">
-                            <img src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
-                                class="d-block w-75 carousel-img" alt="freeCodeCamp.org">
-                        </a>
-                        <div class="carousel-caption">
-                            <h5>freeCodeCamp.org</h5>
-                            <p>Canal do YouTube repleto de conteúdo gratuito e completo sobre, principalmente,
-                                programação.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://youtube.com/@Fireship" class="d-flex justify-content-center" target="_blank">
-                            <img src="https://yt3.googleusercontent.com/nQxZwEfVWgF8zhdqc3gWTFmnDY21uPt6KMxw0m0-pRgW_lOt8jjAAfmFsC6ZRkMjZO-MeCxN6Q=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-                                class="d-block w-75 carousel-img" alt="...">
-                        </a>
-                        <div class="carousel-caption">
-                            <h5>Fireship</h5>
-                            <p>Canal do YouTube com vídeos curtos que abordam temas sobre tecnologia e o mundo de TI.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://youtube.com/@SebastianLague" class="d-flex justify-content-center"
-                            target="_blank">
-                            <img src="https://yt3.googleusercontent.com/VBvGYZOnjMTe5NgZKVPgF_vemzkSIdgwzun3TDKTGOietgvEtZXfZeHxRREUWv-wUe3llkmZ=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
-                                class="d-block w-75 carousel-img" alt="Sebastian Lague">
-                        </a>
-                        <div class="carousel-caption">
-                            <h5>Sebastian Lague</h5>
-                            <p>Canal do YouTube de um desenvolvedor que cria soluções para problemas únicos envolvendo
-                                programação, e as apresenta em vídeos com ótimas explicações e ilustrações sobre o
-                                processo criativo e analítico, e as soluções em si.</p>
-                        </div>
-                    </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                     data-bs-slide="prev">
@@ -181,28 +149,12 @@
             </div>
         </section>
 
-        <section class="d-flex flex-column gap-5 w-100">
+        <section class="d-flex flex-column gap-5 w-100" id="coworkers">
             <div class="d-flex align-items-center">
                 <h2>Colegas de trabalho</h2>
                 <div class="line w-100 ms-4"></div>
             </div>
-            <div class="d-flex flex-wrap gap-5 justify-content-center">
-                <div class="d-flex flex-column gap-2 align-items-center colega rounded p-2 colega-container">
-                    <img class="colega-pic" src="assets/imgs/diego.jpeg" alt="">
-                    <h5 class="m-0">Diego</h5>
-                </div>
-                <div class="d-flex flex-column gap-2 align-items-center colega rounded p-2 colega-container">
-                    <img class="colega-pic" src="assets/imgs/kayky.jpeg" alt="">
-                    <h5 class="m-0">Kayky</h5>
-                </div>
-                <div class="d-flex flex-column gap-2 align-items-center colega rounded p-2 colega-container">
-                    <img class="colega-pic" src="assets/imgs/mateus.jpeg" alt="">
-                    <h5 class="m-0">Mateus</h5>
-                </div>
-                <div class="d-flex flex-column gap-2 align-items-center colega rounded p-2 colega-container">
-                    <img class="colega-pic" src="assets/imgs/otavio.jpeg" alt="">
-                    <h5 class="m-0">Otávio</h5>
-                </div>
+            <div class="d-flex flex-wrap gap-5 justify-content-center coworkers">
             </div>
         </section>
     </main>
@@ -235,6 +187,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

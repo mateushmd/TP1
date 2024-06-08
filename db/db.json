@@ -1,0 +1,51 @@
+{
+    "suggestedContent": [
+        {
+            "id": "0",
+            "title": "freeCodeCamp.org",
+            "description": "Canal do YouTube repleto de conteúdo gratuito e completo sobre, principalmente, programação.",
+            "urlImage": "https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png",
+            "urlContent": "https://youtube.com/@freecodecamp"
+        },
+        {
+            "id": "1",
+            "title": "Fireship",
+            "description": "Canal do YouTube com vídeos curtos que abordam temas sobre tecnologia e o mundo de TI.",
+            "urlImage": "https://yt3.googleusercontent.com/nQxZwEfVWgF8zhdqc3gWTFmnDY21uPt6KMxw0m0-pRgW_lOt8jjAAfmFsC6ZRkMjZO-MeCxN6Q=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+            "urlContent": "https://youtube.com/@Fireship"
+        },
+        {
+            "id": "2",
+            "title": "Sebastian Lague",
+            "description": "Canal do YouTube de um desenvolvedor que cria soluções para problemas únicos envolvendo programação, e as apresenta em vídeos com ótimas explicações e ilustrações sobre o processo criativo e analítico, e as soluções em si.",
+            "urlImage": "https://yt3.googleusercontent.com/VBvGYZOnjMTe5NgZKVPgF_vemzkSIdgwzun3TDKTGOietgvEtZXfZeHxRREUWv-wUe3llkmZ=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+            "urlContent": "https://youtube.com/@SebastianLague"
+        }
+    ],
+    "coworkers": [
+        {
+            "id": "0",
+            "urlPic": "assets/imgs/diego.jpeg",
+            "name": "Diego",
+            "urlGithub": "https://github.com/Sil3ncy"
+        },
+        {
+            "id": "1",
+            "urlPic": "assets/imgs/kayky.jpeg",
+            "name": "Kayky",
+            "urlGithub": "https://github.com/galaxy76709"
+        },
+        {
+            "id": "2",
+            "urlPic": "assets/imgs/mateus.jpeg",
+            "name": "Mateus",
+            "urlGithub": "https://github.com/L0L0VIS"
+        },
+        {
+            "id": "3",
+            "urlPic": "assets/imgs/otavio.jpeg",
+            "name": "Otávio",
+            "urlGithub": ""
+        }
+    ]
+}

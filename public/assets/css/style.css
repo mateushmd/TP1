@@ -76,7 +76,18 @@ i {
 
 .colega {
     border: 1px solid var(--secondary);
+
     width: 15%;
+
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+.colega:hover {
+    transform: scale(107%);
+
+    transition: all .2s ease;
 }
 
 .colega-pic {
