@@ -20,7 +20,7 @@
         <header class="container w-100 p-0 m-0">
             <div class="row">
                 <a href="index.html" class="col-lg-6 col-md-4 text-decoration-none text-light">
-                    <h1 class="rounded fs-4 fw-bold p-3 text-center" id="title-name">MATEUS DINIZ</h1>
+                    <h1 class="rounded fs-4 fw-bold p-3 text-center" id="title-name"></h1>
                 </a>
                 <nav class="col-lg-6 col-md-8 d-flex justify-content-around text-end">
                     <a href="#repos" class="d-flex align-items-center text-light fw-semibold text-decoration-none fs-4">
@@ -44,25 +44,20 @@
                 <div class="line w-100 ms-4"></div>
             </div>
             <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center gap-lg-0 gap-5">
-                <img src="assets/imgs/eu.jpeg" alt="" class="rounded-circle col-lg-4 me-5" id="profile-pic">
+                <img alt="Profile picture" class="rounded-circle col-lg-4 me-5" id="profile-pic">
                 <div class="col-lg-8 ps-lg-5">
-                    <h2 id="profile-name">Mateus Henrique Medeiros Diniz</h2>
-                    <p id="about-me">
-                        Olá! Sou Mateus, entusiasta de Tecnologia da Informação. Atualmente estudo Ciência da
-                        Computação e trabalho com desenvolvimento de softwares em C#. Nos tempos vagos transformo minhas
-                        ideias em código e estou sempre tentando aprender algo novo da minha área.
-                    </p>
-                    <p class="mb-0"><b>Localização:</b> Belo Horizonte, MG, Brasil</p>
-                    <p><a href="https://puginarug.com/" class="text-light fw-semibold">Site</a></p>
-                    <div class="d-flex gap-5">
-                        <a href="https://www.linkedin.com/in/mateus-diniz-b724882a4/"
-                            class="text-light text-decoration-none" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/mateushmd" class="text-light text-decoration-none"
-                            target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://instagram.com/mateehmd" class="text-light text-decoration-none"
-                            target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/mateushmd" class="text-light text-decoration-none" target="_blank"><i
-                                class="fab fa-twitter"></i></a>
+                    <div class="d-flex flex-row align-items-center gap-5">
+                        <h2 id="profile-name"></h2>
+                        <div>
+                            <i class="fa-regular fa-user fs-6"></i> <span id="followers"></span>
+                        </div>
+                    </div>
+                    <p id="about-me"></p>
+                    <p class="mb-0"><b>Localização:</b> <span id="location"></span></p>
+                    <p><a id="website" class="text-light fw-semibold" target="_blank">Site</a></p>
+                    <div id="social-media-links" class="d-flex gap-5">
+                        <a id="github" class="text-light text-decoration-none" target="_blank"><i
+                                class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>

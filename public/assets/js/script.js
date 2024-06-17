@@ -1,25 +1,27 @@
 $(() =>
 {
+    const GITHUB_USER = 'mateushmd';
+
     const URLS = {
         suggestions: '/suggestedContent',
-        coworkers: '/coworkers'
-    }
+        coworkers: '/coworkers',
+        githubUser: `https://api.github.com/users/${GITHUB_USER}`,
+        githubSocialAccounts: `https://api.github.com/users/${GITHUB_USER}/social_accounts`
+    };
 
-    const getSuggestions = (callbackFunction) =>
+    const get = (url, callbackFunction) =>
     {
-        fetch(`${URLS.suggestions}`)
-            .then(response => response.json())
-            .then(data => { if (callbackFunction) callbackFunction(data) })
-            .catch(error => { console.error('Error fetching suggested content: ', error) });
-    }
+        fetch(url)
+            .then(response =>
+            {
+                if (response.ok)
+                    return response.json();
 
-    const getCoworkers = (callbackFunction) =>
-    {
-        fetch(`${URLS.coworkers}`)
-            .then(response => response.json())
+                throw new Error(`response was not ok: ` + response.statusText);
+            })
             .then(data => { if (callbackFunction) callbackFunction(data) })
-            .catch(error => { console.error('Error fetching coworkers: ', error) });
-    }
+            .catch(error => { console.error(`Error fetching ${url}: `, error) });
+    };
 
     const createCoworkerElement = (coworker) =>
     {
@@ -33,7 +35,7 @@ $(() =>
         });
 
         return container;
-    }
+    };
 
     const createSuggestionElement = (suggestion) =>
     {
@@ -50,9 +52,17 @@ $(() =>
         container.append(caption);
 
         return container;
-    }
+    };
 
-    getSuggestions(data =>
+    const createSocialMediaLink = (socialMedia) =>
+    {
+        const anchor = $('<a>', { href: socialMedia.url, class: 'text-light text-decoration-none', target: '_blank' });
+        anchor.append($('<i>', { class: `fab fa-${socialMedia.provider}` }));
+
+        return anchor;
+    };
+
+    get(URLS.suggestions, data =>
     {
         data.forEach((suggestion, index) =>
         {
@@ -65,12 +75,34 @@ $(() =>
         });
     });
 
-    getCoworkers(data =>
+    get(URLS.coworkers, data =>
     {
         data.forEach(coworker =>
         {
             $('.coworkers').append(createCoworkerElement(coworker));
         });
+    });
+
+    get(URLS.githubUser, data =>
+    {
+        $('#profile-pic').attr('src', data.avatar_url);
+        $('#profile-name').text(data.name);
+        $('#title-name').text(data.name.toUpperCase());
+        $('#about-me').text(data.bio);
+        $('#location').text(data.location);
+        $('#website').attr('href', data.blog);
+        $('#followers').text(data.followers);
+        $('#github').attr('href', data.url);
+    });
+
+    get(URLS.githubSocialAccounts, data =>
+    {
+        data.forEach(socialMedia =>
+        {
+            const socialMediaEl = createSocialMediaLink(socialMedia);
+
+            $('#social-media-links').append(socialMediaEl);
+        })
     });
 });
 
