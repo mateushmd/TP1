@@ -1,26 +1,11 @@
 $(() =>
 {
-    const GITHUB_USER = 'mateushmd';
-
     const URLS = {
         suggestions: '/suggestedContent',
         coworkers: '/coworkers',
         githubUser: `https://api.github.com/users/${GITHUB_USER}`,
-        githubSocialAccounts: `https://api.github.com/users/${GITHUB_USER}/social_accounts`
-    };
-
-    const get = (url, callbackFunction) =>
-    {
-        fetch(url)
-            .then(response =>
-            {
-                if (response.ok)
-                    return response.json();
-
-                throw new Error(`response was not ok: ` + response.statusText);
-            })
-            .then(data => { if (callbackFunction) callbackFunction(data) })
-            .catch(error => { console.error(`Error fetching ${url}: `, error) });
+        githubSocialAccounts: `https://api.github.com/users/${GITHUB_USER}/social_accounts`,
+        githubRepos: `https://api.github.com/users/${GITHUB_USER}/repos`
     };
 
     const createCoworkerElement = (coworker) =>
@@ -58,6 +43,31 @@ $(() =>
     {
         const anchor = $('<a>', { href: socialMedia.url, class: 'text-light text-decoration-none', target: '_blank' });
         anchor.append($('<i>', { class: `fab fa-${socialMedia.provider}` }));
+
+        return anchor;
+    };
+
+    const createRepo = (repo) =>
+    {
+        const anchor = $('<a>', { href: `repo.html?name=${repo.name}`, class: 'w-25 text-decoration-none text-light repository rounded' });
+
+        const div = $('<div>', { class: 'w-100 h-100 p-3 d-flex flex-column justify-content-between' });
+        div.append($('<h3>', { text: repo.name }));
+        div.append($('<p>', { text: repo.description }));
+
+        const divStats = $('<div>', { class: 'd-flex align-items-center justify-content-around' });
+
+        const spanStars = $('<span>', { text: ` ${repo.stargazers_count}` });
+        spanStars.prepend($('<i>', { class: 'fa-regular fa-star fs-6' }));
+
+        const spanWatchers = $('<span>', { text: ` ${repo.watchers_count}` });
+        spanWatchers.prepend($('<i>', { class: 'fa-regular fa-user fs-6' }));
+
+        divStats.append(spanStars);
+        divStats.append(spanWatchers);
+
+        div.append(divStats);
+        anchor.append(div);
 
         return anchor;
     };
@@ -104,7 +114,42 @@ $(() =>
             $('#social-media-links').append(socialMediaEl);
         })
     });
+
+
+
+    get(URLS.githubRepos, data =>
+    {
+        $('#repo-count').text(data.length);
+
+        const repositoriesEl = $('#repositories');
+
+        data.forEach(repo =>
+        {
+            const repoEl = createRepo(repo);
+
+            repositoriesEl.append(repoEl);
+        });
+    })
 });
 
+const GITHUB_USER = 'mateushmd';
 
+function get(url, callbackFunction, callbackFunctionError)
+{
+    fetch(url)
+        .then(response =>
+        {
+            if (response.ok)
+                return response.json();
 
+            throw new Error(`response was not ok: ` + response.statusText);
+        })
+        .then(data => { if (callbackFunction) callbackFunction(data) })
+        .catch(error =>
+        {
+            console.error(`Error fetching ${url}: `, error);
+            if (callbackFunctionError) callbackFunctionError();
+        });
+};
+
+export default { GITHUB_USER, get };
