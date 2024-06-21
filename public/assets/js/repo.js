@@ -27,8 +27,8 @@ $(() =>
         $('#repo-description').text(repo.description !== null ? repo.description : 'Sem descrição');
         $('#repo-created').text(repo.created_at.substring(0, 10));
         $('#repo-language').text(repo.language !== null ? repo.language : 'Sem linguagem principal');
-        $('#repo-link').prop('href', repo.git_url);
-        $('#repo-link').text(repo.git_url);
+        $('#repo-link').prop('href', repo.html_url);
+        $('#repo-link').text(repo.html_url);
         $('#repo-stars').text(repo.stargazers_count);
         $('#repo-watchers').text(repo.watchers_count);
 
